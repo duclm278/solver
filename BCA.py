@@ -37,6 +37,11 @@ def main():
             for c1 in all_courses:
                 for c2 in all_courses:
                     if conflicts[c1][c2]:
+                        # model.Add(
+                        #     assignments[(i, j)].Not()
+                        #     + assignments[(i, k)].Not()
+                        #     >= 1
+                        # )
                         model.AddBoolOr(
                             [
                                 assignments[(t, c1)].Not(),
